@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option go_package = "./user-proto";
+
+//Service for friends
+service UserService {
+  //Add friends method
+  rpc GetUserByLogin (GetUserByLoginIn) returns (GetUserByLoginOut){};
+  rpc isUserExistByUUID (isUserExistByUUIDIn) returns (isUserExistByUUIDOut){};
+}
+
+// Data in request or getting uuid by login. If User doesnt exist - user will be creating
+message GetUserByLoginIn {
+  // Email of target user
+  string login = 1;
+}
+
+// Message for response
+message GetUserByLoginOut {
+  // UUID of user
+  string uuid = 1;
+  // Flag for indicate of new user
+  bool isNewUser = 2;
+}
+
+// Message for request
+message isUserExistByUUIDIn {
+  // UUID for target user
+  string uuid = 1;
+}
+// Message for response
+message isUserExistByUUIDOut {
+  // Flag of indicate user exist
+  bool subscription = 1;
+}
