@@ -31,5 +31,5 @@ message isUserExistByUUIDIn {
 // Message for response
 message isUserExistByUUIDOut {
   // Flag of indicate user exist
-  bool subscription = 1;
+  bool isExist = 1;
 }

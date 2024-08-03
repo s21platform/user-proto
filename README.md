@@ -76,7 +76,7 @@ Message for response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subscription | [bool](#bool) |  | Flag of indicate user exist |
+| isExist | [bool](#bool) |  | Flag of indicate user exist |
 
 
 
