@@ -6,7 +6,7 @@ option go_package = "./user-proto";
 service UserService {
   //Add friends method
   rpc GetUserByLogin (GetUserByLoginIn) returns (GetUserByLoginOut){};
-  rpc isUserExistByUUID (isUserExistByUUIDIn) returns (isUserExistByUUIDOut){};
+  rpc IsUserExistByUUID (IsUserExistByUUIDIn) returns (IsUserExistByUUIDOut){};
 }
 
 // Data in request or getting uuid by login. If User doesnt exist - user will be creating
@@ -24,12 +24,12 @@ message GetUserByLoginOut {
 }
 
 // Message for request
-message isUserExistByUUIDIn {
+message IsUserExistByUUIDIn {
   // UUID for target user
   string uuid = 1;
 }
 // Message for response
-message isUserExistByUUIDOut {
+message IsUserExistByUUIDOut {
   // Flag of indicate user exist
   bool isExist = 1;
 }
