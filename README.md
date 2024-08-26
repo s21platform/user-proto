@@ -6,8 +6,8 @@
 - [user.proto](#user-proto)
     - [GetUserByLoginIn](#-GetUserByLoginIn)
     - [GetUserByLoginOut](#-GetUserByLoginOut)
-    - [isUserExistByUUIDIn](#-isUserExistByUUIDIn)
-    - [isUserExistByUUIDOut](#-isUserExistByUUIDOut)
+    - [IsUserExistByUUIDIn](#-IsUserExistByUUIDIn)
+    - [IsUserExistByUUIDOut](#-IsUserExistByUUIDOut)
   
     - [UserService](#-UserService)
   
@@ -53,9 +53,9 @@ Message for response
 
 
 
-<a name="-isUserExistByUUIDIn"></a>
+<a name="-IsUserExistByUUIDIn"></a>
 
-### isUserExistByUUIDIn
+### IsUserExistByUUIDIn
 Message for request
 
 
@@ -68,9 +68,9 @@ Message for request
 
 
 
-<a name="-isUserExistByUUIDOut"></a>
+<a name="-IsUserExistByUUIDOut"></a>
 
-### isUserExistByUUIDOut
+### IsUserExistByUUIDOut
 Message for response
 
 
@@ -97,7 +97,7 @@ Service for friends
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | GetUserByLogin | [.GetUserByLoginIn](#GetUserByLoginIn) | [.GetUserByLoginOut](#GetUserByLoginOut) | Add friends method |
-| isUserExistByUUID | [.isUserExistByUUIDIn](#isUserExistByUUIDIn) | [.isUserExistByUUIDOut](#isUserExistByUUIDOut) |  |
+| IsUserExistByUUID | [.IsUserExistByUUIDIn](#IsUserExistByUUIDIn) | [.IsUserExistByUUIDOut](#IsUserExistByUUIDOut) |  |
 
  
 
