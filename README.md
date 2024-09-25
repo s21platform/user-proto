@@ -6,6 +6,8 @@
 - [user.proto](#user-proto)
     - [GetUserByLoginIn](#-GetUserByLoginIn)
     - [GetUserByLoginOut](#-GetUserByLoginOut)
+    - [GetUserInfoByUUIDIn](#-GetUserInfoByUUIDIn)
+    - [GetUserInfoByUUIDOut](#-GetUserInfoByUUIDOut)
     - [IsUserExistByUUIDIn](#-IsUserExistByUUIDIn)
     - [IsUserExistByUUIDOut](#-IsUserExistByUUIDOut)
   
@@ -47,6 +49,49 @@ Message for response
 | ----- | ---- | ----- | ----------- |
 | uuid | [string](#string) |  | UUID of user |
 | isNewUser | [bool](#bool) |  | Flag for indicate of new user |
+
+
+
+
+
+
+<a name="-GetUserInfoByUUIDIn"></a>
+
+### GetUserInfoByUUIDIn
+Request data fo getting user info (for initiator page)
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| uuid | [string](#string) |  | UUID for target user |
+
+
+
+
+
+
+<a name="-GetUserInfoByUUIDOut"></a>
+
+### GetUserInfoByUUIDOut
+Response data for initiator page
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| nickname | [string](#string) |  |  |
+| avatar | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| surname | [string](#string) |  |  |
+| birthdate | [string](#string) |  |  |
+| phone | [string](#string) |  |  |
+| city | [string](#string) |  |  |
+| telegram | [string](#string) |  |  |
+| git | [string](#string) |  |  |
+| os | [string](#string) |  |  |
+| work | [string](#string) |  |  |
+| university | [string](#string) |  |  |
+| skills | [string](#string) | repeated |  |
+| hobbies | [string](#string) | repeated |  |
 
 
 
@@ -98,6 +143,7 @@ Service for friends
 | ----------- | ------------ | ------------- | ------------|
 | GetUserByLogin | [.GetUserByLoginIn](#GetUserByLoginIn) | [.GetUserByLoginOut](#GetUserByLoginOut) | Add friends method |
 | IsUserExistByUUID | [.IsUserExistByUUIDIn](#IsUserExistByUUIDIn) | [.IsUserExistByUUIDOut](#IsUserExistByUUIDOut) |  |
+| GetUserInfoByUUID | [.GetUserInfoByUUIDIn](#GetUserInfoByUUIDIn) | [.GetUserInfoByUUIDOut](#GetUserInfoByUUIDOut) |  |
 
  
 

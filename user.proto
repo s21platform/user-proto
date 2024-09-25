@@ -7,6 +7,7 @@ service UserService {
   //Add friends method
   rpc GetUserByLogin (GetUserByLoginIn) returns (GetUserByLoginOut){};
   rpc IsUserExistByUUID (IsUserExistByUUIDIn) returns (IsUserExistByUUIDOut){};
+  rpc GetUserInfoByUUID (GetUserInfoByUUIDIn) returns (GetUserInfoByUUIDOut){};
 }
 
 // Data in request or getting uuid by login. If User doesnt exist - user will be creating
@@ -32,4 +33,28 @@ message IsUserExistByUUIDIn {
 message IsUserExistByUUIDOut {
   // Flag of indicate user exist
   bool isExist = 1;
+}
+
+// Request data fo getting user info (for initiator page)
+message GetUserInfoByUUIDIn {
+  // UUID for target user
+  string uuid = 1;
+}
+
+// Response data for initiator page
+message GetUserInfoByUUIDOut {
+  string nickname = 1;
+  string avatar = 2;
+  string name = 3;
+  string surname = 4;
+  string birthdate = 5;
+  string phone = 6;
+  string city = 7;
+  string telegram = 8;
+  string git = 9;
+  string os = 10;
+  string work = 11;
+  string university = 12;
+  repeated string skills = 13;
+  repeated string hobbies = 14;
 }
