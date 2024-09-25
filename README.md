@@ -80,16 +80,16 @@ Response data for initiator page
 | ----- | ---- | ----- | ----------- |
 | nickname | [string](#string) |  |  |
 | avatar | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| surname | [string](#string) |  |  |
-| birthdate | [string](#string) |  |  |
-| phone | [string](#string) |  |  |
-| city | [string](#string) |  |  |
-| telegram | [string](#string) |  |  |
-| git | [string](#string) |  |  |
-| os | [string](#string) |  |  |
-| work | [string](#string) |  |  |
-| university | [string](#string) |  |  |
+| name | [string](#string) | optional |  |
+| surname | [string](#string) | optional |  |
+| birthdate | [string](#string) | optional |  |
+| phone | [string](#string) | optional |  |
+| city | [string](#string) | optional |  |
+| telegram | [string](#string) | optional |  |
+| git | [string](#string) | optional |  |
+| os | [string](#string) | optional |  |
+| work | [string](#string) | optional |  |
+| university | [string](#string) | optional |  |
 | skills | [string](#string) | repeated |  |
 | hobbies | [string](#string) | repeated |  |
 

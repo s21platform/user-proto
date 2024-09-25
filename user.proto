@@ -45,16 +45,16 @@ message GetUserInfoByUUIDIn {
 message GetUserInfoByUUIDOut {
   string nickname = 1;
   string avatar = 2;
-  string name = 3;
-  string surname = 4;
-  string birthdate = 5;
-  string phone = 6;
-  string city = 7;
-  string telegram = 8;
-  string git = 9;
-  string os = 10;
-  string work = 11;
-  string university = 12;
+  optional string name = 3;
+  optional string surname = 4;
+  optional string birthdate = 5;
+  optional string phone = 6;
+  optional string city = 7;
+  optional string telegram = 8;
+  optional string git = 9;
+  optional string os = 10;
+  optional string work = 11;
+  optional string university = 12;
   repeated string skills = 13;
   repeated string hobbies = 14;
 }
