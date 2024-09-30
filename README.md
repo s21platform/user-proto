@@ -4,6 +4,7 @@
 ## Table of Contents
 
 - [user.proto](#user-proto)
+    - [Birthday](#-Birthday)
     - [GetUserByLoginIn](#-GetUserByLoginIn)
     - [GetUserByLoginOut](#-GetUserByLoginOut)
     - [GetUserInfoByUUIDIn](#-GetUserInfoByUUIDIn)
@@ -21,6 +22,23 @@
 <p align="right"><a href="#top">Top</a></p>
 
 ## user.proto
+
+
+
+<a name="-Birthday"></a>
+
+### Birthday
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| day | [int64](#int64) |  |  |
+| month | [int64](#int64) |  |  |
+| year | [int64](#int64) |  |  |
+
+
+
 
 
 
@@ -82,7 +100,7 @@ Response data for initiator page
 | avatar | [string](#string) |  |  |
 | name | [string](#string) | optional |  |
 | surname | [string](#string) | optional |  |
-| birthdate | [string](#string) | optional |  |
+| birthdate | [Birthday](#Birthday) | optional |  |
 | phone | [string](#string) | optional |  |
 | city | [string](#string) | optional |  |
 | telegram | [string](#string) | optional |  |
