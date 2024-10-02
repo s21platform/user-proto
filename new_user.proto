@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-option go_package = "user-proto/new_friend_register";
-
-message NewFriendRegister {
-  string email = 1;
-  string uuid = 2;
-}
