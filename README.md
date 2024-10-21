@@ -5,6 +5,8 @@
 
 - [user.proto](#user-proto)
     - [Birthday](#-Birthday)
+    - [GetLoginByUUIDIn](#-GetLoginByUUIDIn)
+    - [GetLoginByUUIDOut](#-GetLoginByUUIDOut)
     - [GetUserByLoginIn](#-GetUserByLoginIn)
     - [GetUserByLoginOut](#-GetUserByLoginOut)
     - [GetUserInfoByUUIDIn](#-GetUserInfoByUUIDIn)
@@ -36,6 +38,36 @@
 | day | [int64](#int64) |  |  |
 | month | [int64](#int64) |  |  |
 | year | [int64](#int64) |  |  |
+
+
+
+
+
+
+<a name="-GetLoginByUUIDIn"></a>
+
+### GetLoginByUUIDIn
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| uuid | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="-GetLoginByUUIDOut"></a>
+
+### GetLoginByUUIDOut
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| login | [string](#string) |  |  |
 
 
 
@@ -162,6 +194,7 @@ Service for friends
 | GetUserByLogin | [.GetUserByLoginIn](#GetUserByLoginIn) | [.GetUserByLoginOut](#GetUserByLoginOut) | Add friends method |
 | IsUserExistByUUID | [.IsUserExistByUUIDIn](#IsUserExistByUUIDIn) | [.IsUserExistByUUIDOut](#IsUserExistByUUIDOut) |  |
 | GetUserInfoByUUID | [.GetUserInfoByUUIDIn](#GetUserInfoByUUIDIn) | [.GetUserInfoByUUIDOut](#GetUserInfoByUUIDOut) |  |
+| GetLoginByUUID | [.GetLoginByUUIDIn](#GetLoginByUUIDIn) | [.GetLoginByUUIDOut](#GetLoginByUUIDOut) |  |
 
  
 

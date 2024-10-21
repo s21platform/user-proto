@@ -8,6 +8,7 @@ service UserService {
   rpc GetUserByLogin (GetUserByLoginIn) returns (GetUserByLoginOut){};
   rpc IsUserExistByUUID (IsUserExistByUUIDIn) returns (IsUserExistByUUIDOut){};
   rpc GetUserInfoByUUID (GetUserInfoByUUIDIn) returns (GetUserInfoByUUIDOut){};
+  rpc GetLoginByUUID (GetLoginByUUIDIn) returns (GetLoginByUUIDOut){};
 }
 
 // Data in request or getting uuid by login. If User doesnt exist - user will be creating
@@ -63,4 +64,12 @@ message GetUserInfoByUUIDOut {
   optional string university = 12;
   repeated string skills = 13;
   repeated string hobbies = 14;
+}
+
+message GetLoginByUUIDIn {
+  string uuid = 1;
+}
+
+message GetLoginByUUIDOut {
+  string login = 1;
 }
