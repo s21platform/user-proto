@@ -11,8 +11,11 @@
     - [GetUserByLoginOut](#-GetUserByLoginOut)
     - [GetUserInfoByUUIDIn](#-GetUserInfoByUUIDIn)
     - [GetUserInfoByUUIDOut](#-GetUserInfoByUUIDOut)
+    - [GetUserWithLimitIn](#-GetUserWithLimitIn)
+    - [GetUserWithLimitOut](#-GetUserWithLimitOut)
     - [IsUserExistByUUIDIn](#-IsUserExistByUUIDIn)
     - [IsUserExistByUUIDOut](#-IsUserExistByUUIDOut)
+    - [User](#-User)
   
     - [UserService](#-UserService)
   
@@ -148,6 +151,38 @@ Response data for initiator page
 
 
 
+<a name="-GetUserWithLimitIn"></a>
+
+### GetUserWithLimitIn
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| limit | [int64](#int64) |  |  |
+| offset | [int64](#int64) |  |  |
+
+
+
+
+
+
+<a name="-GetUserWithLimitOut"></a>
+
+### GetUserWithLimitOut
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user | [User](#User) | repeated |  |
+| total | [int64](#int64) |  |  |
+
+
+
+
+
+
 <a name="-IsUserExistByUUIDIn"></a>
 
 ### IsUserExistByUUIDIn
@@ -177,6 +212,23 @@ Message for response
 
 
 
+
+<a name="-User"></a>
+
+### User
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| nickname | [string](#string) |  |  |
+| uuid | [string](#string) |  |  |
+| avatar_link | [string](#string) |  |  |
+
+
+
+
+
  
 
  
@@ -195,6 +247,7 @@ Service for friends
 | IsUserExistByUUID | [.IsUserExistByUUIDIn](#IsUserExistByUUIDIn) | [.IsUserExistByUUIDOut](#IsUserExistByUUIDOut) |  |
 | GetUserInfoByUUID | [.GetUserInfoByUUIDIn](#GetUserInfoByUUIDIn) | [.GetUserInfoByUUIDOut](#GetUserInfoByUUIDOut) |  |
 | GetLoginByUUID | [.GetLoginByUUIDIn](#GetLoginByUUIDIn) | [.GetLoginByUUIDOut](#GetLoginByUUIDOut) |  |
+| GetUserWithLimit | [.GetUserWithLimitIn](#GetUserWithLimitIn) | [.GetUserWithLimitOut](#GetUserWithLimitOut) |  |
 
  
 

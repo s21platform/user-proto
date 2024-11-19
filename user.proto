@@ -9,6 +9,7 @@ service UserService {
   rpc IsUserExistByUUID (IsUserExistByUUIDIn) returns (IsUserExistByUUIDOut){};
   rpc GetUserInfoByUUID (GetUserInfoByUUIDIn) returns (GetUserInfoByUUIDOut){};
   rpc GetLoginByUUID (GetLoginByUUIDIn) returns (GetLoginByUUIDOut){};
+  rpc GetUserWithLimit(GetUserWithLimitIn) returns (GetUserWithLimitOut){};
 }
 
 // Data in request or getting uuid by login. If User doesnt exist - user will be creating
@@ -72,4 +73,20 @@ message GetLoginByUUIDIn {
 
 message GetLoginByUUIDOut {
   string login = 1;
+}
+
+message GetUserWithLimitIn {
+  int64 limit = 1;
+  int64 offset = 2;
+}
+
+message GetUserWithLimitOut {
+  repeated User user = 1;
+  int64 total = 2;
+}
+
+message User {
+  string nickname = 1;
+  string uuid = 2;
+  string avatar_link = 3;
 }
