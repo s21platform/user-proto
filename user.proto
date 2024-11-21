@@ -9,7 +9,8 @@ service UserService {
   rpc IsUserExistByUUID (IsUserExistByUUIDIn) returns (IsUserExistByUUIDOut){};
   rpc GetUserInfoByUUID (GetUserInfoByUUIDIn) returns (GetUserInfoByUUIDOut){};
   rpc GetLoginByUUID (GetLoginByUUIDIn) returns (GetLoginByUUIDOut){};
-  rpc GetUserWithLimit(GetUserWithLimitIn) returns (GetUserWithLimitOut){};
+  rpc GetUserWithLimit (GetUserWithLimitIn) returns (GetUserWithLimitOut){};
+  rpc UpdateProfile (UpdateProfileIn) returns (UpdateProfileOut){};
 }
 
 // Data in request or getting uuid by login. If User doesnt exist - user will be creating
@@ -89,4 +90,16 @@ message User {
   string nickname = 1;
   string uuid = 2;
   string avatar_link = 3;
+}
+
+message UpdateProfileIn {
+  string name = 1;
+  string birthday = 2;
+  string telegram = 3;
+  string github = 4;
+  int64 os_id = 5;
+}
+
+message UpdateProfileOut {
+  bool status = 1;
 }

@@ -15,6 +15,8 @@
     - [GetUserWithLimitOut](#-GetUserWithLimitOut)
     - [IsUserExistByUUIDIn](#-IsUserExistByUUIDIn)
     - [IsUserExistByUUIDOut](#-IsUserExistByUUIDOut)
+    - [UpdateProfileIn](#-UpdateProfileIn)
+    - [UpdateProfileOut](#-UpdateProfileOut)
     - [User](#-User)
   
     - [UserService](#-UserService)
@@ -213,6 +215,40 @@ Message for response
 
 
 
+<a name="-UpdateProfileIn"></a>
+
+### UpdateProfileIn
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| birthday | [string](#string) |  |  |
+| telegram | [string](#string) |  |  |
+| github | [string](#string) |  |  |
+| os_id | [int64](#int64) |  |  |
+
+
+
+
+
+
+<a name="-UpdateProfileOut"></a>
+
+### UpdateProfileOut
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| status | [bool](#bool) |  |  |
+
+
+
+
+
+
 <a name="-User"></a>
 
 ### User
@@ -248,6 +284,7 @@ Service for friends
 | GetUserInfoByUUID | [.GetUserInfoByUUIDIn](#GetUserInfoByUUIDIn) | [.GetUserInfoByUUIDOut](#GetUserInfoByUUIDOut) |  |
 | GetLoginByUUID | [.GetLoginByUUIDIn](#GetLoginByUUIDIn) | [.GetLoginByUUIDOut](#GetLoginByUUIDOut) |  |
 | GetUserWithLimit | [.GetUserWithLimitIn](#GetUserWithLimitIn) | [.GetUserWithLimitOut](#GetUserWithLimitOut) |  |
+| UpdateProfile | [.UpdateProfileIn](#UpdateProfileIn) | [.UpdateProfileOut](#UpdateProfileOut) |  |
 
  
 
