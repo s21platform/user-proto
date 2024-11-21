@@ -13,6 +13,8 @@
     - [GetUserInfoByUUIDOut](#-GetUserInfoByUUIDOut)
     - [IsUserExistByUUIDIn](#-IsUserExistByUUIDIn)
     - [IsUserExistByUUIDOut](#-IsUserExistByUUIDOut)
+    - [UpdateProfileIn](#-UpdateProfileIn)
+    - [UpdateProfileOut](#-UpdateProfileOut)
   
     - [UserService](#-UserService)
   
@@ -177,6 +179,40 @@ Message for response
 
 
 
+
+<a name="-UpdateProfileIn"></a>
+
+### UpdateProfileIn
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| birthday | [string](#string) |  |  |
+| telegram | [string](#string) |  |  |
+| github | [string](#string) |  |  |
+| os_id | [int64](#int64) |  |  |
+
+
+
+
+
+
+<a name="-UpdateProfileOut"></a>
+
+### UpdateProfileOut
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| status | [bool](#bool) |  |  |
+
+
+
+
+
  
 
  
@@ -195,6 +231,7 @@ Service for friends
 | IsUserExistByUUID | [.IsUserExistByUUIDIn](#IsUserExistByUUIDIn) | [.IsUserExistByUUIDOut](#IsUserExistByUUIDOut) |  |
 | GetUserInfoByUUID | [.GetUserInfoByUUIDIn](#GetUserInfoByUUIDIn) | [.GetUserInfoByUUIDOut](#GetUserInfoByUUIDOut) |  |
 | GetLoginByUUID | [.GetLoginByUUIDIn](#GetLoginByUUIDIn) | [.GetLoginByUUIDOut](#GetLoginByUUIDOut) |  |
+| UpdateProfile | [.UpdateProfileIn](#UpdateProfileIn) | [.UpdateProfileOut](#UpdateProfileOut) |  |
 
  
 

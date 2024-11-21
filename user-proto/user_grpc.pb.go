@@ -23,6 +23,7 @@ const (
 	UserService_IsUserExistByUUID_FullMethodName = "/UserService/IsUserExistByUUID"
 	UserService_GetUserInfoByUUID_FullMethodName = "/UserService/GetUserInfoByUUID"
 	UserService_GetLoginByUUID_FullMethodName    = "/UserService/GetLoginByUUID"
+	UserService_UpdateProfile_FullMethodName     = "/UserService/UpdateProfile"
 )
 
 // UserServiceClient is the client API for UserService service.
@@ -36,6 +37,7 @@ type UserServiceClient interface {
 	IsUserExistByUUID(ctx context.Context, in *IsUserExistByUUIDIn, opts ...grpc.CallOption) (*IsUserExistByUUIDOut, error)
 	GetUserInfoByUUID(ctx context.Context, in *GetUserInfoByUUIDIn, opts ...grpc.CallOption) (*GetUserInfoByUUIDOut, error)
 	GetLoginByUUID(ctx context.Context, in *GetLoginByUUIDIn, opts ...grpc.CallOption) (*GetLoginByUUIDOut, error)
+	UpdateProfile(ctx context.Context, in *UpdateProfileIn, opts ...grpc.CallOption) (*UpdateProfileOut, error)
 }
 
 type userServiceClient struct {
@@ -86,6 +88,16 @@ func (c *userServiceClient) GetLoginByUUID(ctx context.Context, in *GetLoginByUU
 	return out, nil
 }
 
+func (c *userServiceClient) UpdateProfile(ctx context.Context, in *UpdateProfileIn, opts ...grpc.CallOption) (*UpdateProfileOut, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateProfileOut)
+	err := c.cc.Invoke(ctx, UserService_UpdateProfile_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // UserServiceServer is the server API for UserService service.
 // All implementations must embed UnimplementedUserServiceServer
 // for forward compatibility.
@@ -97,6 +109,7 @@ type UserServiceServer interface {
 	IsUserExistByUUID(context.Context, *IsUserExistByUUIDIn) (*IsUserExistByUUIDOut, error)
 	GetUserInfoByUUID(context.Context, *GetUserInfoByUUIDIn) (*GetUserInfoByUUIDOut, error)
 	GetLoginByUUID(context.Context, *GetLoginByUUIDIn) (*GetLoginByUUIDOut, error)
+	UpdateProfile(context.Context, *UpdateProfileIn) (*UpdateProfileOut, error)
 	mustEmbedUnimplementedUserServiceServer()
 }
 
@@ -118,6 +131,9 @@ func (UnimplementedUserServiceServer) GetUserInfoByUUID(context.Context, *GetUse
 }
 func (UnimplementedUserServiceServer) GetLoginByUUID(context.Context, *GetLoginByUUIDIn) (*GetLoginByUUIDOut, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetLoginByUUID not implemented")
+}
+func (UnimplementedUserServiceServer) UpdateProfile(context.Context, *UpdateProfileIn) (*UpdateProfileOut, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateProfile not implemented")
 }
 func (UnimplementedUserServiceServer) mustEmbedUnimplementedUserServiceServer() {}
 func (UnimplementedUserServiceServer) testEmbeddedByValue()                     {}
@@ -212,6 +228,24 @@ func _UserService_GetLoginByUUID_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _UserService_UpdateProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateProfileIn)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).UpdateProfile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: UserService_UpdateProfile_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).UpdateProfile(ctx, req.(*UpdateProfileIn))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // UserService_ServiceDesc is the grpc.ServiceDesc for UserService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -234,6 +268,10 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetLoginByUUID",
 			Handler:    _UserService_GetLoginByUUID_Handler,
+		},
+		{
+			MethodName: "UpdateProfile",
+			Handler:    _UserService_UpdateProfile_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -9,6 +9,7 @@ service UserService {
   rpc IsUserExistByUUID (IsUserExistByUUIDIn) returns (IsUserExistByUUIDOut){};
   rpc GetUserInfoByUUID (GetUserInfoByUUIDIn) returns (GetUserInfoByUUIDOut){};
   rpc GetLoginByUUID (GetLoginByUUIDIn) returns (GetLoginByUUIDOut){};
+  rpc UpdateProfile (UpdateProfileIn) returns (UpdateProfileOut){};
 }
 
 // Data in request or getting uuid by login. If User doesnt exist - user will be creating
@@ -72,4 +73,16 @@ message GetLoginByUUIDIn {
 
 message GetLoginByUUIDOut {
   string login = 1;
+}
+
+message UpdateProfileIn {
+  string name = 1;
+  string birthday = 2;
+  string telegram = 3;
+  string github = 4;
+  int64 os_id = 5;
+}
+
+message UpdateProfileOut {
+  bool status = 1;
 }

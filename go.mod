@@ -1,6 +1,6 @@
 module github.com/s21platform/user-proto
 
-go 1.22.3
+go 1.22.8
 
 require (
 	google.golang.org/grpc v1.65.0
