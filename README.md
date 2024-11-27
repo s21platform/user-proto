@@ -10,8 +10,8 @@
     - [GetUserByLoginOut](#-GetUserByLoginOut)
     - [GetUserInfoByUUIDIn](#-GetUserInfoByUUIDIn)
     - [GetUserInfoByUUIDOut](#-GetUserInfoByUUIDOut)
-    - [GetUserWithLimitIn](#-GetUserWithLimitIn)
-    - [GetUserWithLimitOut](#-GetUserWithLimitOut)
+    - [GetUserWithOffsetIn](#-GetUserWithOffsetIn)
+    - [GetUserWithOffsetOut](#-GetUserWithOffsetOut)
     - [IsUserExistByUUIDIn](#-IsUserExistByUUIDIn)
     - [IsUserExistByUUIDOut](#-IsUserExistByUUIDOut)
     - [UpdateProfileIn](#-UpdateProfileIn)
@@ -135,9 +135,9 @@ Response data for initiator page
 
 
 
-<a name="-GetUserWithLimitIn"></a>
+<a name="-GetUserWithOffsetIn"></a>
 
-### GetUserWithLimitIn
+### GetUserWithOffsetIn
 
 
 
@@ -145,15 +145,16 @@ Response data for initiator page
 | ----- | ---- | ----- | ----------- |
 | limit | [int64](#int64) |  |  |
 | offset | [int64](#int64) |  |  |
+| nickname | [string](#string) |  |  |
 
 
 
 
 
 
-<a name="-GetUserWithLimitOut"></a>
+<a name="-GetUserWithOffsetOut"></a>
 
-### GetUserWithLimitOut
+### GetUserWithOffsetOut
 
 
 
@@ -242,6 +243,8 @@ Message for response
 | nickname | [string](#string) |  |  |
 | uuid | [string](#string) |  |  |
 | avatar_link | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| surname | [string](#string) |  |  |
 
 
 
@@ -265,7 +268,7 @@ Service for friends
 | IsUserExistByUUID | [.IsUserExistByUUIDIn](#IsUserExistByUUIDIn) | [.IsUserExistByUUIDOut](#IsUserExistByUUIDOut) |  |
 | GetUserInfoByUUID | [.GetUserInfoByUUIDIn](#GetUserInfoByUUIDIn) | [.GetUserInfoByUUIDOut](#GetUserInfoByUUIDOut) |  |
 | GetLoginByUUID | [.GetLoginByUUIDIn](#GetLoginByUUIDIn) | [.GetLoginByUUIDOut](#GetLoginByUUIDOut) |  |
-| GetUserWithLimit | [.GetUserWithLimitIn](#GetUserWithLimitIn) | [.GetUserWithLimitOut](#GetUserWithLimitOut) |  |
+| GetUserWithOffset | [.GetUserWithOffsetIn](#GetUserWithOffsetIn) | [.GetUserWithOffsetOut](#GetUserWithOffsetOut) |  |
 | UpdateProfile | [.UpdateProfileIn](#UpdateProfileIn) | [.UpdateProfileOut](#UpdateProfileOut) |  |
 
  
