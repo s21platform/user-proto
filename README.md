@@ -6,6 +6,7 @@
 - [user.proto](#user-proto)
     - [GetLoginByUUIDIn](#-GetLoginByUUIDIn)
     - [GetLoginByUUIDOut](#-GetLoginByUUIDOut)
+    - [GetOs](#-GetOs)
     - [GetUserByLoginIn](#-GetUserByLoginIn)
     - [GetUserByLoginOut](#-GetUserByLoginOut)
     - [GetUserInfoByUUIDIn](#-GetUserInfoByUUIDIn)
@@ -55,6 +56,22 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | login | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="-GetOs"></a>
+
+### GetOs
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [int64](#int64) |  |  |
+| label | [string](#string) |  |  |
 
 
 
@@ -124,7 +141,7 @@ Response data for initiator page
 | city | [string](#string) | optional |  |
 | telegram | [string](#string) | optional |  |
 | git | [string](#string) | optional |  |
-| os | [string](#string) | optional |  |
+| os | [GetOs](#GetOs) | optional |  |
 | work | [string](#string) | optional |  |
 | university | [string](#string) | optional |  |
 | skills | [string](#string) | repeated |  |

@@ -44,6 +44,11 @@ message GetUserInfoByUUIDIn {
   string uuid = 1;
 }
 
+message GetOs {
+  int64 id = 1;
+  string label = 2;
+}
+
 // Response data for initiator page
 message GetUserInfoByUUIDOut {
   string nickname = 1;
@@ -55,7 +60,7 @@ message GetUserInfoByUUIDOut {
   optional string city = 7;
   optional string telegram = 8;
   optional string git = 9;
-  optional string os = 10;
+  optional GetOs os = 10;
   optional string work = 11;
   optional string university = 12;
   repeated string skills = 13;
