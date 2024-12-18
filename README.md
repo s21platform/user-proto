@@ -355,6 +355,7 @@ Service for friends
 | GetLoginByUUID | [.GetLoginByUUIDIn](#GetLoginByUUIDIn) | [.GetLoginByUUIDOut](#GetLoginByUUIDOut) |  |
 | GetUserWithOffset | [.GetUserWithOffsetIn](#GetUserWithOffsetIn) | [.GetUserWithOffsetOut](#GetUserWithOffsetOut) |  |
 | UpdateProfile | [.UpdateProfileIn](#UpdateProfileIn) | [.UpdateProfileOut](#UpdateProfileOut) |  |
+| GetUsersByUUID | [.GetUsersByUUIDIn](#GetUsersByUUIDIn) | [.GetUsersByUUIDOut](#GetUsersByUUIDOut) |  |
 
  
 

@@ -11,6 +11,8 @@ service UserService {
   rpc GetLoginByUUID (GetLoginByUUIDIn) returns (GetLoginByUUIDOut){};
   rpc GetUserWithOffset (GetUserWithOffsetIn) returns (GetUserWithOffsetOut){};
   rpc UpdateProfile (UpdateProfileIn) returns (UpdateProfileOut){};
+
+  rpc GetUsersByUUID (GetUsersByUUIDIn) returns (GetUsersByUUIDOut){};
 }
 
 // Data in request or getting uuid by login. If User doesnt exist - user will be creating
