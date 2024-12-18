@@ -118,6 +118,11 @@ message GetUsersByUUIDOut {
   repeated UserInfoMin users = 1;
 }
 
+// Message for UsersUUID
+message UsersUUID {
+  string uuid = 1;
+}
+
 // Min user information structure
 message UserInfoMin {
   string uuid = 1;
@@ -126,3 +131,4 @@ message UserInfoMin {
   string name = 4;
   string surname = 5;
 }
+
