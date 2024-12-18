@@ -105,3 +105,27 @@ message UpdateProfileIn {
 message UpdateProfileOut {
   bool status = 1;
 }
+
+// Request message for getting multiple users by their UUIDs
+message GetUsersByUUIDIn {
+  repeated string users_uuid = 1;
+}
+
+// Response message containing minimal user information
+message GetUsersByUUIDOut {
+  repeated UserInfoMin users = 1;
+}
+
+// Message for UsersUUID
+message UsersUUID {
+  string uuid = 1;
+}
+
+// Min user information structure
+message UserInfoMin {
+  string uuid = 1;
+  string login = 2;
+  string last_avatar = 3;
+  string name = 4;
+  string surname = 5;
+}
