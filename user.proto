@@ -110,12 +110,12 @@ message UpdateProfileOut {
 
 // Request message for getting multiple users by their UUIDs
 message GetUsersByUUIDIn {
-  repeated string users_uuid = 1;
+  repeated UsersUUID users_uuid = 1;
 }
 
 // Response message containing minimal user information
 message GetUsersByUUIDOut {
-  repeated UserInfoMin users = 1;
+  repeated UserInfoMin users_info = 1;
 }
 
 // Message for UsersUUID

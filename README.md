@@ -197,7 +197,7 @@ Request message for getting multiple users by their UUIDs
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| users_uuid | [string](#string) | repeated |  |
+| users_uuid | [UsersUUID](#UsersUUID) | repeated |  |
 
 
 
@@ -212,7 +212,7 @@ Response message containing minimal user information
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| users | [UserInfoMin](#UserInfoMin) | repeated |  |
+| users_info | [UserInfoMin](#UserInfoMin) | repeated |  |
 
 
 
