@@ -11,6 +11,8 @@ service UserService {
   rpc GetLoginByUUID (GetLoginByUUIDIn) returns (GetLoginByUUIDOut){};
   rpc GetUserWithOffset (GetUserWithOffsetIn) returns (GetUserWithOffsetOut){};
   rpc UpdateProfile (UpdateProfileIn) returns (UpdateProfileOut){};
+
+  rpc GetUsersByUUID (GetUsersByUUIDIn) returns (GetUsersByUUIDOut){};
 }
 
 // Data in request or getting uuid by login. If User doesnt exist - user will be creating
@@ -104,4 +106,28 @@ message UpdateProfileIn {
 
 message UpdateProfileOut {
   bool status = 1;
+}
+
+// Request message for getting multiple users by their UUIDs
+message GetUsersByUUIDIn {
+  repeated UsersUUID users_uuid = 1;
+}
+
+// Response message containing minimal user information
+message GetUsersByUUIDOut {
+  repeated UserInfoMin users_info = 1;
+}
+
+// Message for UsersUUID
+message UsersUUID {
+  string uuid = 1;
+}
+
+// Min user information structure
+message UserInfoMin {
+  string uuid = 1;
+  string login = 2;
+  string last_avatar = 3;
+  string name = 4;
+  string surname = 5;
 }
