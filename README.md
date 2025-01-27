@@ -13,11 +13,15 @@
     - [GetUserInfoByUUIDOut](#-GetUserInfoByUUIDOut)
     - [GetUserWithOffsetIn](#-GetUserWithOffsetIn)
     - [GetUserWithOffsetOut](#-GetUserWithOffsetOut)
+    - [GetUsersByUUIDIn](#-GetUsersByUUIDIn)
+    - [GetUsersByUUIDOut](#-GetUsersByUUIDOut)
     - [IsUserExistByUUIDIn](#-IsUserExistByUUIDIn)
     - [IsUserExistByUUIDOut](#-IsUserExistByUUIDOut)
     - [UpdateProfileIn](#-UpdateProfileIn)
     - [UpdateProfileOut](#-UpdateProfileOut)
     - [User](#-User)
+    - [UserInfoMin](#-UserInfoMin)
+    - [UsersUUID](#-UsersUUID)
   
     - [UserService](#-UserService)
   
@@ -185,6 +189,36 @@ Response data for initiator page
 
 
 
+<a name="-GetUsersByUUIDIn"></a>
+
+### GetUsersByUUIDIn
+Request message for getting multiple users by their UUIDs
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| users_uuid | [UsersUUID](#UsersUUID) | repeated |  |
+
+
+
+
+
+
+<a name="-GetUsersByUUIDOut"></a>
+
+### GetUsersByUUIDOut
+Response message containing minimal user information
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| users_info | [UserInfoMin](#UserInfoMin) | repeated |  |
+
+
+
+
+
+
 <a name="-IsUserExistByUUIDIn"></a>
 
 ### IsUserExistByUUIDIn
@@ -267,6 +301,40 @@ Message for response
 
 
 
+
+<a name="-UserInfoMin"></a>
+
+### UserInfoMin
+Min user information structure
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| uuid | [string](#string) |  |  |
+| login | [string](#string) |  |  |
+| last_avatar | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| surname | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="-UsersUUID"></a>
+
+### UsersUUID
+Message for UsersUUID
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| uuid | [string](#string) |  |  |
+
+
+
+
+
  
 
  
@@ -287,6 +355,7 @@ Service for friends
 | GetLoginByUUID | [.GetLoginByUUIDIn](#GetLoginByUUIDIn) | [.GetLoginByUUIDOut](#GetLoginByUUIDOut) |  |
 | GetUserWithOffset | [.GetUserWithOffsetIn](#GetUserWithOffsetIn) | [.GetUserWithOffsetOut](#GetUserWithOffsetOut) |  |
 | UpdateProfile | [.UpdateProfileIn](#UpdateProfileIn) | [.UpdateProfileOut](#UpdateProfileOut) |  |
+| GetUsersByUUID | [.GetUsersByUUIDIn](#GetUsersByUUIDIn) | [.GetUsersByUUIDOut](#GetUsersByUUIDOut) |  |
 
  
 
