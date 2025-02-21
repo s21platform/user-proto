@@ -12,7 +12,7 @@ spec:
   type: grpc
   lifecycle: production
   owner: user-service-team  # GitHub-логин ответственного
-  definitionRef: url:https://github.com/s21platform/user-proto/user.proto  # Путь к файлу proto-схемы
+  definition: url:https://github.com/s21platform/user-proto/user.proto  # Путь к файлу proto-схемы
 #  providesApis:
 #    - user-api  # API, который предоставляет сервис
 #  consumesApis:
