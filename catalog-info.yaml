@@ -20,39 +20,12 @@ spec:
     //Service for friends
     service UserService {
       //Add friends method
-      rpc GetUserByLogin (GetUserByLoginIn) returns (GetUserByLoginOut){};
-      rpc IsUserExistByUUID (IsUserExistByUUIDIn) returns (IsUserExistByUUIDOut){};
       rpc GetUserInfoByUUID (GetUserInfoByUUIDIn) returns (GetUserInfoByUUIDOut){};
       rpc GetLoginByUUID (GetLoginByUUIDIn) returns (GetLoginByUUIDOut){};
       rpc GetUserWithOffset (GetUserWithOffsetIn) returns (GetUserWithOffsetOut){};
       rpc UpdateProfile (UpdateProfileIn) returns (UpdateProfileOut){};
     
       rpc GetUsersByUUID (GetUsersByUUIDIn) returns (GetUsersByUUIDOut){};
-    }
-      
-      // Data in request or getting uuid by login. If User doesnt exist - user will be creating
-      message GetUserByLoginIn {
-      // Email of target user
-      string login = 1;
-    }
-      
-      // Message for response
-      message GetUserByLoginOut {
-      // UUID of user
-      string uuid = 1;
-      // Flag for indicate of new user
-      bool isNewUser = 2;
-    }
-      
-      // Message for request
-      message IsUserExistByUUIDIn {
-      // UUID for target user
-      string uuid = 1;
-    }
-      // Message for response
-      message IsUserExistByUUIDOut {
-      // Flag of indicate user exist
-      bool isExist = 1;
     }
       
       // Request data fo getting user info (for initiator page)
@@ -145,6 +118,61 @@ spec:
       string last_avatar = 3;
       string name = 4;
       string surname = 5;
+    }
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: user-v0-GetUserByLogin
+  description: Получение или создание юзера по логину
+  annotations:
+    github.com/project-slug: s21platform/user-proto  # Укажите правильный репозиторий
+  #    backstage.io/techdocs-ref: dir:.  # Если планируете использовать TechDocs
+  tags:
+    - proto
+spec:
+  type: grpc
+  lifecycle: production
+  owner: user-service-team  # GitHub-логин ответственного
+  definition: |
+    rpc GetUserByLogin (GetUserByLoginIn) returns (GetUserByLoginOut){};
+    
+    message GetUserByLoginIn {
+     string login = 1;
+    }
+     
+    message GetUserByLoginOut {
+     string uuid = 1;
+     bool isNewUser = 2;
+    }
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: user-v0-GetUserByLogin
+  description: Получение информации - существует ли пользователь по логину
+  annotations:
+    github.com/project-slug: s21platform/user-proto  # Укажите правильный репозиторий
+  #    backstage.io/techdocs-ref: dir:.  # Если планируете использовать TechDocs
+  tags:
+    - proto
+spec:
+  type: grpc
+  lifecycle: production
+  owner: user-service-team  # GitHub-логин ответственного
+  definition: |
+    rpc GetUserByLogin (GetUserByLoginIn) returns (GetUserByLoginOut){};
+    
+    message IsUserExistByUUIDIn {
+      string uuid = 1;
+    }
+    
+    message IsUserExistByUUIDOut {
+      bool isExist = 1;
     }
 
 ---
