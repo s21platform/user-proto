@@ -153,7 +153,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: user-v0-GetUserByLogin
+  name: user-v0-IsUserExistByUUID
   description: Получение информации - существует ли пользователь по логину
   annotations:
     github.com/project-slug: s21platform/user-proto  # Укажите правильный репозиторий
@@ -165,7 +165,7 @@ spec:
   lifecycle: production
   owner: user-service-team  # GitHub-логин ответственного
   definition: |
-    rpc GetUserByLogin (GetUserByLoginIn) returns (GetUserByLoginOut){};
+    rpc IsUserExistByUUID (IsUserExistByUUIDIn) returns (IsUserExistByUUIDOut){};
     
     message IsUserExistByUUIDIn {
       string uuid = 1;
