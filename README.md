@@ -13,6 +13,7 @@
     - [GetUserInfoByUUIDOut](#-GetUserInfoByUUIDOut)
     - [GetUserWithOffsetIn](#-GetUserWithOffsetIn)
     - [GetUserWithOffsetOut](#-GetUserWithOffsetOut)
+    - [GetUserWithOffsetOutAll](#-GetUserWithOffsetOutAll)
     - [GetUsersByUUIDIn](#-GetUsersByUUIDIn)
     - [GetUsersByUUIDOut](#-GetUsersByUUIDOut)
     - [IsUserExistByUUIDIn](#-IsUserExistByUUIDIn)
@@ -150,6 +151,7 @@ Response data for initiator page
 | university | [string](#string) | optional |  |
 | skills | [string](#string) | repeated |  |
 | hobbies | [string](#string) | repeated |  |
+| uuid | [string](#string) | optional |  |
 
 
 
@@ -189,6 +191,22 @@ Response data for initiator page
 
 
 
+<a name="-GetUserWithOffsetOutAll"></a>
+
+### GetUserWithOffsetOutAll
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user | [GetUserInfoByUUIDIn](#GetUserInfoByUUIDIn) | repeated |  |
+| total | [int64](#int64) |  |  |
+
+
+
+
+
+
 <a name="-GetUsersByUUIDIn"></a>
 
 ### GetUsersByUUIDIn
@@ -212,7 +230,7 @@ Response message containing minimal user information
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| users_info | [UserInfoMin](#UserInfoMin) | repeated |  |
+| users_info | [GetUserInfoByUUIDOut](#GetUserInfoByUUIDOut) | repeated |  |
 
 
 
@@ -356,6 +374,7 @@ Service for friends
 | GetUserWithOffset | [.GetUserWithOffsetIn](#GetUserWithOffsetIn) | [.GetUserWithOffsetOut](#GetUserWithOffsetOut) |  |
 | UpdateProfile | [.UpdateProfileIn](#UpdateProfileIn) | [.UpdateProfileOut](#UpdateProfileOut) |  |
 | GetUsersByUUID | [.GetUsersByUUIDIn](#GetUsersByUUIDIn) | [.GetUsersByUUIDOut](#GetUsersByUUIDOut) |  |
+| GetUsersInfoWithOffset | [.GetUserWithOffsetIn](#GetUserWithOffsetIn) | [.GetUserWithOffsetOutAll](#GetUserWithOffsetOutAll) |  |
 
  
 
