@@ -91,7 +91,7 @@ message GetUserWithOffsetOut {
 }
 
 message GetUserWithOffsetOutAll {
-  repeated GetUserInfoByUUIDIn user = 1;
+  repeated GetUserInfoByUUIDOut user = 1;
   int64 total = 2;
 }
 

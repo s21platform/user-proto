@@ -199,7 +199,7 @@ Response data for initiator page
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| user | [GetUserInfoByUUIDIn](#GetUserInfoByUUIDIn) | repeated |  |
+| user | [GetUserInfoByUUIDOut](#GetUserInfoByUUIDOut) | repeated |  |
 | total | [int64](#int64) |  |  |
 
 
