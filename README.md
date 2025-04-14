@@ -230,7 +230,7 @@ Response message containing minimal user information
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| users_info | [GetUserInfoByUUIDOut](#GetUserInfoByUUIDOut) | repeated |  |
+| users_info | [UserInfoMin](#UserInfoMin) | repeated |  |
 
 
 
@@ -369,7 +369,7 @@ Service for friends
 | ----------- | ------------ | ------------- | ------------|
 | GetUserByLogin | [.GetUserByLoginIn](#GetUserByLoginIn) | [.GetUserByLoginOut](#GetUserByLoginOut) | Add friends method |
 | IsUserExistByUUID | [.IsUserExistByUUIDIn](#IsUserExistByUUIDIn) | [.IsUserExistByUUIDOut](#IsUserExistByUUIDOut) |  |
-| GetUserInfoByUUID | [.GetUserInfoByUUIDIn](#GetUserInfoByUUIDIn) | [.UserInfoMin](#UserInfoMin) |  |
+| GetUserInfoByUUID | [.GetUserInfoByUUIDIn](#GetUserInfoByUUIDIn) | [.GetUserInfoByUUIDOut](#GetUserInfoByUUIDOut) |  |
 | GetLoginByUUID | [.GetLoginByUUIDIn](#GetLoginByUUIDIn) | [.GetLoginByUUIDOut](#GetLoginByUUIDOut) |  |
 | GetUserWithOffset | [.GetUserWithOffsetIn](#GetUserWithOffsetIn) | [.GetUserWithOffsetOut](#GetUserWithOffsetOut) |  |
 | UpdateProfile | [.UpdateProfileIn](#UpdateProfileIn) | [.UpdateProfileOut](#UpdateProfileOut) |  |
