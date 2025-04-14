@@ -25,7 +25,7 @@ type UserServiceClient interface {
 	// Add friends method
 	GetUserByLogin(ctx context.Context, in *GetUserByLoginIn, opts ...grpc.CallOption) (*GetUserByLoginOut, error)
 	IsUserExistByUUID(ctx context.Context, in *IsUserExistByUUIDIn, opts ...grpc.CallOption) (*IsUserExistByUUIDOut, error)
-	GetUserInfoByUUID(ctx context.Context, in *GetUserInfoByUUIDIn, opts ...grpc.CallOption) (*GetUserInfoByUUIDOut, error)
+	GetUserInfoByUUID(ctx context.Context, in *GetUserInfoByUUIDIn, opts ...grpc.CallOption) (*UserInfoMin, error)
 	GetLoginByUUID(ctx context.Context, in *GetLoginByUUIDIn, opts ...grpc.CallOption) (*GetLoginByUUIDOut, error)
 	GetUserWithOffset(ctx context.Context, in *GetUserWithOffsetIn, opts ...grpc.CallOption) (*GetUserWithOffsetOut, error)
 	UpdateProfile(ctx context.Context, in *UpdateProfileIn, opts ...grpc.CallOption) (*UpdateProfileOut, error)
@@ -59,8 +59,8 @@ func (c *userServiceClient) IsUserExistByUUID(ctx context.Context, in *IsUserExi
 	return out, nil
 }
 
-func (c *userServiceClient) GetUserInfoByUUID(ctx context.Context, in *GetUserInfoByUUIDIn, opts ...grpc.CallOption) (*GetUserInfoByUUIDOut, error) {
-	out := new(GetUserInfoByUUIDOut)
+func (c *userServiceClient) GetUserInfoByUUID(ctx context.Context, in *GetUserInfoByUUIDIn, opts ...grpc.CallOption) (*UserInfoMin, error) {
+	out := new(UserInfoMin)
 	err := c.cc.Invoke(ctx, "/UserService/GetUserInfoByUUID", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -120,7 +120,7 @@ type UserServiceServer interface {
 	// Add friends method
 	GetUserByLogin(context.Context, *GetUserByLoginIn) (*GetUserByLoginOut, error)
 	IsUserExistByUUID(context.Context, *IsUserExistByUUIDIn) (*IsUserExistByUUIDOut, error)
-	GetUserInfoByUUID(context.Context, *GetUserInfoByUUIDIn) (*GetUserInfoByUUIDOut, error)
+	GetUserInfoByUUID(context.Context, *GetUserInfoByUUIDIn) (*UserInfoMin, error)
 	GetLoginByUUID(context.Context, *GetLoginByUUIDIn) (*GetLoginByUUIDOut, error)
 	GetUserWithOffset(context.Context, *GetUserWithOffsetIn) (*GetUserWithOffsetOut, error)
 	UpdateProfile(context.Context, *UpdateProfileIn) (*UpdateProfileOut, error)
@@ -139,7 +139,7 @@ func (UnimplementedUserServiceServer) GetUserByLogin(context.Context, *GetUserBy
 func (UnimplementedUserServiceServer) IsUserExistByUUID(context.Context, *IsUserExistByUUIDIn) (*IsUserExistByUUIDOut, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method IsUserExistByUUID not implemented")
 }
-func (UnimplementedUserServiceServer) GetUserInfoByUUID(context.Context, *GetUserInfoByUUIDIn) (*GetUserInfoByUUIDOut, error) {
+func (UnimplementedUserServiceServer) GetUserInfoByUUID(context.Context, *GetUserInfoByUUIDIn) (*UserInfoMin, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserInfoByUUID not implemented")
 }
 func (UnimplementedUserServiceServer) GetLoginByUUID(context.Context, *GetLoginByUUIDIn) (*GetLoginByUUIDOut, error) {
