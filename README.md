@@ -369,7 +369,7 @@ Service for friends
 | ----------- | ------------ | ------------- | ------------|
 | GetUserByLogin | [.GetUserByLoginIn](#GetUserByLoginIn) | [.GetUserByLoginOut](#GetUserByLoginOut) | Add friends method |
 | IsUserExistByUUID | [.IsUserExistByUUIDIn](#IsUserExistByUUIDIn) | [.IsUserExistByUUIDOut](#IsUserExistByUUIDOut) |  |
-| GetUserInfoByUUID | [.GetUserInfoByUUIDIn](#GetUserInfoByUUIDIn) | [.GetUserInfoByUUIDOut](#GetUserInfoByUUIDOut) |  |
+| GetUserInfoByUUID | [.GetUserInfoByUUIDIn](#GetUserInfoByUUIDIn) | [.UserInfoMin](#UserInfoMin) |  |
 | GetLoginByUUID | [.GetLoginByUUIDIn](#GetLoginByUUIDIn) | [.GetLoginByUUIDOut](#GetLoginByUUIDOut) |  |
 | GetUserWithOffset | [.GetUserWithOffsetIn](#GetUserWithOffsetIn) | [.GetUserWithOffsetOut](#GetUserWithOffsetOut) |  |
 | UpdateProfile | [.UpdateProfileIn](#UpdateProfileIn) | [.UpdateProfileOut](#UpdateProfileOut) |  |
