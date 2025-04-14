@@ -7,7 +7,7 @@ service UserService {
   //Add friends method
   rpc GetUserByLogin (GetUserByLoginIn) returns (GetUserByLoginOut){};
   rpc IsUserExistByUUID (IsUserExistByUUIDIn) returns (IsUserExistByUUIDOut){};
-  rpc GetUserInfoByUUID (GetUserInfoByUUIDIn) returns (GetUserInfoByUUIDOut){};
+  rpc GetUserInfoByUUID (GetUserInfoByUUIDIn) returns (UserInfoMin){};
   rpc GetLoginByUUID (GetLoginByUUIDIn) returns (GetLoginByUUIDOut){};
   rpc GetUserWithOffset (GetUserWithOffsetIn) returns (GetUserWithOffsetOut){};
   rpc UpdateProfile (UpdateProfileIn) returns (UpdateProfileOut){};
